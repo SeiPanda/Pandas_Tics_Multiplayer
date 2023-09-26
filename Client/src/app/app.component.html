@@ -1,0 +1,25 @@
+<ng-container *ngIf="isGameReady">
+  <app-header [players]="players"></app-header>
+  <div id="tr_inner">
+    <div id="number-container">
+      <button class="number-container-item buttonBlock-item"
+              [ngClass]="{ 'winning-field': field.win }"
+              [disabled]="!!field.sign || isBlocked"
+              (click)="onField(field)"
+              *ngFor="let field of fields">
+        <span [ngClass]="{ 'circle': field.sign === 'o', 'rectangle':  field.sign !== 'o' }">{{field.sign}}</span>
+      </button>
+    </div>
+  </div>
+</ng-container>
+<div id="PopUpName" class="pop" *ngIf="!isPlayerNameSubmited">
+  <div class="inner">
+    <input maxlength="10" type="text" spellcheck="false" matInput [(ngModel)]="username">
+    <div class="submitButton" (click)="send(); username = ''"><span>Join Game</span></div>
+  </div>
+</div>
+<div *ngIf="!isGameReady && isPlayerNameSubmited" class="pop">
+  <div class="inner">
+    <div id="waitingText">Waiting for other Player <div class="lds-facebook"><div></div><div></div><div></div></div></div>
+  </div>
+</div>

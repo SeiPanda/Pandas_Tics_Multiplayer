@@ -1,0 +1,47 @@
+@font-face {
+  font-family: neon;
+  src: url('/assets/NEON.ttf')
+};
+
+
+:host {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  justify-items: center;
+  width: 100%;
+  align-items: center;
+}
+
+.player{
+  font-size: 2rem;
+  font-family: neon;
+  text-shadow: none !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#player1 {
+  color: rgb(255, 0, 140);
+
+}
+
+#player2 {
+  color: rgb(255, 136, 0);
+
+}
+
+
+
+#heading{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: azure;
+  font-size: 3rem;
+  font-family: neon;
+  background: linear-gradient(126deg, rgb(255, 136, 0) 0%, rgb(216, 29, 144) 50%, rgb(255, 136, 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
